@@ -34,7 +34,7 @@ public final class Dblp_explorer {
 			List<String> master = new ArrayList<String>();
 			for ( String k : keyword) {
 				String t = "\"id\": \"" + k + "\", \"title\"";
-				System.out.println(t);
+				//System.out.println(t);
 				Stream<String> lines = Files.lines(Paths.get(name));
 				List<String> strOb = lines.parallel().filter(x -> x.contains(t)).map(x -> (String) x).collect(Collectors.toList());
 				for (String str : strOb) {
@@ -79,7 +79,7 @@ public final class Dblp_explorer {
 		List<String> filteredList = new ArrayList<String>();
 		 for (String i : id) {
 			 
-			System.out.println("The references:aaaa"  + i);
+			//System.out.println("The references:aaaa"  + i);
 			filteredList = data.parallelStream().filter(x -> ((String) x.get("title")).contains(i)).map(x -> (String)x.get("id")).collect(Collectors.toList());
 		 }
 		 return filteredList;
